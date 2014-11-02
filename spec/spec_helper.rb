@@ -2,6 +2,9 @@ require 'rubygems'
 require 'rspec'
 require 'active_model'
 
+require 'coveralls'
+Coveralls.wear!
+
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 
