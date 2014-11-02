@@ -1,5 +1,11 @@
 # UsernameNotReservedValidator
 
+[![Build Status](https://travis-ci.org/kwappa/username_not_reserved_validator.png)](https://travis-ci.org/kwappa/username_not_reserved_validator)
+
+[![Coverage Status](https://coveralls.io/repos/kwappa/username_not_reserved_validator/badge.png?branch=master)](https://coveralls.io/r/kwappa/username_not_reserved_validator?branch=master)
+
+[![Code Climate](https://codeclimate.com/github/kwappa/username_not_reserved_validator.png)](https://codeclimate.com/github/kwappa/username_not_reserved_validator)
+
 custom validator for ActiveModel.
 
 validates that username is not included in the reserved name list.
