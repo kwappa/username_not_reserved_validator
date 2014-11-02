@@ -1,0 +1,3 @@
+module UsernameNotReservedValidator
+  # Your code goes here...
+end
