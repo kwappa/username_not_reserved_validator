@@ -1,10 +1,6 @@
 # UsernameNotReservedValidator
 
-[![Build Status](https://travis-ci.org/kwappa/username_not_reserved_validator.png)](https://travis-ci.org/kwappa/username_not_reserved_validator)
-
-[![Coverage Status](https://coveralls.io/repos/kwappa/username_not_reserved_validator/badge.png?branch=master)](https://coveralls.io/r/kwappa/username_not_reserved_validator?branch=master)
-
-[![Code Climate](https://codeclimate.com/github/kwappa/username_not_reserved_validator.png)](https://codeclimate.com/github/kwappa/username_not_reserved_validator)
+[![Build Status](https://travis-ci.org/kwappa/username_not_reserved_validator.png)](https://travis-ci.org/kwappa/username_not_reserved_validator)   [![Coverage Status](https://coveralls.io/repos/kwappa/username_not_reserved_validator/badge.png?branch=master)](https://coveralls.io/r/kwappa/username_not_reserved_validator?branch=master)   [![Code Climate](https://codeclimate.com/github/kwappa/username_not_reserved_validator.png)](https://codeclimate.com/github/kwappa/username_not_reserved_validator)
 
 custom validator for ActiveModel.
 
@@ -43,7 +39,7 @@ write validation setting on your ActiveModel
 ```
 class User < ActiveRecord::Base
   validates(:name, username_not_reserved: true)
-)
+end
 ```
 
 ### options
@@ -51,7 +47,7 @@ class User < ActiveRecord::Base
 * `additional_reserved_names` (Array of String / default: `[]`)
  * specify additional reserved names
 * `case_insencitve` (Boolean / default: `true`)
- * if set to `false`, comparison is case insencitive
+ * if set to `false`, comparison is case sencitive
 * `message` (Symbol / default: `:invalid`)
  * specify key of error message
 
