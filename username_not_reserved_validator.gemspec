@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name          = "username_not_reserved_validator"
-  spec.version       = "0.1.0"
+  spec.version       = "1.0.0"
   spec.authors       = ["SHIOYA, Hiromu"]
   spec.email         = ["kwappa.856@gmail.com"]
   spec.summary       = "validates that username is not included in reserved list."
