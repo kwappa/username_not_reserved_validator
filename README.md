@@ -1,6 +1,15 @@
 # UsernameNotReservedValidator
 
-TODO: Write a gem description
+custom validator for ActiveModel.
+
+validates that username is not included in the reserved name list.
+
+e.g:
+
+* index
+* home
+* top
+* ...
 
 ## Installation
 
@@ -20,12 +29,30 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+### validation settings
 
-## Contributing
+write validation setting on your ActiveModel
 
-1. Fork it ( https://github.com/[my-github-username]/username_not_reserved_validator/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
+
+```
+class User < ActiveRecord::Base
+  validates(:name, username_not_reserved: true)
+)
+```
+
+### options
+
+* `additional_reserved_names` (Array of String / default: `[]`)
+ * specify additional reserved names
+* `case_insencitve` (Boolean / default: `true`)
+ * if set to `false`, comparison is case insencitive
+* `message` (Symbol / default: `:invalid`)
+ * specify key of error message
+
+## Referenced resources
+
+* http://qiita.com/phimcall/items/4c559b70f70ea7f1953b
+* http://bitarts.jp/blog/archives/004363.html
+* https://github.com/balexand/email_validator
+
+with tons of thanks :sushi:
