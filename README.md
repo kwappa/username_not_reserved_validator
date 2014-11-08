@@ -35,7 +35,6 @@ Or install it yourself as:
 
 write validation setting on your ActiveModel
 
-
 ```
 class User < ActiveRecord::Base
   validates(:name, username_not_reserved: true)
@@ -49,7 +48,21 @@ end
 * `case_insencitve` (Boolean / default: `true`)
  * if set to `false`, comparison is case sencitive
 * `message` (Symbol / default: `:invalid`)
- * specify key of error message
+ * specify custom key of error message
+
+e.g.)
+
+```
+class User < ActiveRecord::Base
+  validates(:name,
+            username_not_reserved: {
+              additional_reserved_names: %w[foo bar],
+              case_insencitve: true,
+              message: :reserved_username
+            }
+           )
+end
+```
 
 ## Referenced resources
 
