@@ -103,6 +103,17 @@ describe UsernameNotReservedValidator do
         let(:username) { invalid_pluralized_username }
         include_examples 'rejects username'
       end
+
+      describe 'name "user" and "users"' do
+        context 'when "user"' do
+          let(:username) { 'user' }
+          include_examples 'rejects username'
+        end
+        context 'when "users"' do
+          let(:username) { 'users' }
+          include_examples 'rejects username'
+        end
+      end
     end
 
     describe 'model with case insencitive validation' do
