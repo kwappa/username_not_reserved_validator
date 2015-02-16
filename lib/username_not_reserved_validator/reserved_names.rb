@@ -152,6 +152,8 @@ module UsernameNotReservedValidator::ReservedNames
     activity
     password
     auth
+    oauth
+    oauth2
     session
     register
     login
@@ -215,6 +217,7 @@ module UsernameNotReservedValidator::ReservedNames
     code
     guest
     app
+    application
     maintenance
     roc
     id
