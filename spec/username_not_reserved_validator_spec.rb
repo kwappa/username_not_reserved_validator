@@ -2,9 +2,9 @@ require 'spec_helper'
 
 describe UsernameNotReservedValidator do
   let(:reserved_usernames) { UsernameNotReservedValidator::ReservedNames.list }
-  let(:valid_username) { 'valid_username' }
-  let(:invalid_username) { reserved_usernames.first(30).sample }
-  let(:invalid_camelized_username) { reserved_usernames.first(30).sample.camelize }
+  let(:valid_username)   { 'valid_username' }
+  let(:invalid_username) { 'account' }
+  let(:invalid_camelized_username)  { reserved_usernames.first(30).sample.camelize }
   let(:invalid_pluralized_username) { reserved_usernames.first(30).sample.pluralize }
   let(:invalid_additional_username) { 'additional_reserved_username' }
 
