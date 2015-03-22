@@ -263,5 +263,8 @@ module UsernameNotReservedValidator::ReservedNames
     empty
     0
     www
+    webmaster
+    hostmaster
+    postmaster
   ]
 end
