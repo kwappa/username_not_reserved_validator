@@ -4,8 +4,8 @@ describe UsernameNotReservedValidator do
   let(:reserved_usernames) { UsernameNotReservedValidator::ReservedNames.list }
   let(:valid_username)   { 'valid_username' }
   let(:invalid_username) { 'account' }
-  let(:invalid_camelized_username)  { reserved_usernames.first(30).sample.camelize }
-  let(:invalid_pluralized_username) { reserved_usernames.first(30).sample.pluralize }
+  let(:invalid_camelized_username)  { invalid_username.camelize }
+  let(:invalid_pluralized_username) { invalid_username.pluralize }
   let(:invalid_additional_username) { 'additional_reserved_username' }
 
   describe '#validate_each' do
