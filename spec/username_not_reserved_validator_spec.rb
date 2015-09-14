@@ -117,26 +117,38 @@ describe UsernameNotReservedValidator do
     end
 
     describe 'model with case insencitive validation' do
-      subject(:user) { WithCaseInsencitiveValidationUser.new(name: username) }
+      shared_examples_for 'rejects username without case validation' do
+        subject(:user) { model_class.new(name: username) }
 
-      context 'with valid username' do
-        let(:username) { valid_username }
-        include_examples 'accepts username'
+        context 'with valid username' do
+          let(:username) { valid_username }
+          include_examples 'accepts username'
+        end
+
+        context 'with invalid username' do
+          let(:username) { invalid_username }
+          include_examples 'rejects username'
+        end
+
+        context 'with invalid camelized username' do
+          let(:username) { invalid_camelized_username }
+          include_examples 'accepts username'
+        end
+
+        context 'with invalid pluralized username' do
+          let(:username) { invalid_pluralized_username }
+          include_examples 'rejects username'
+        end
       end
 
-      context 'with invalid username' do
-        let(:username) { invalid_username }
-        include_examples 'rejects username'
+      context 'WithCaseInsensitiveValidationUser' do
+        let(:model_class) { WithCaseInsensitiveValidationUser }
+        include_examples 'rejects username without case validation'
       end
 
-      context 'with invalid camelized username' do
-        let(:username) { invalid_camelized_username }
-        include_examples 'accepts username'
-      end
-
-      context 'with invalid pluralized username' do
-        let(:username) { invalid_pluralized_username }
-        include_examples 'rejects username'
+      context 'WithCaseInsencitiveValidationUser' do
+        let(:model_class) { WithCaseInsencitiveValidationUser }
+        include_examples 'rejects username without case validation'
       end
     end
 
@@ -151,6 +163,6 @@ describe UsernameNotReservedValidator do
   end
 
   describe '.default_options' do
-    it { expect(described_class.default_options).to eq( { case_insencitive: true } ) }
+    it { expect(described_class.default_options).to eq( { case_insensitive: true } ) }
   end
 end

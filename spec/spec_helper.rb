@@ -33,6 +33,10 @@ class WithCaseInsencitiveValidationUser < TestModel
   validates :name, username_not_reserved: { case_insencitive: false }
 end
 
+class WithCaseInsensitiveValidationUser < TestModel
+  validates :name, username_not_reserved: { case_insensitive: false }
+end
+
 class WithAdditionalReservedNamesValidationUser < TestModel
   validates :name, username_not_reserved: { additional_reserved_names: %w[additional_reserved_username] }
 end
