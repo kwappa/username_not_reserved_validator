@@ -47,8 +47,9 @@ end
 
 * `additional_reserved_names` (Array of String / default: `[]`)
  * specify additional reserved names
-* `case_insencitve` (Boolean / default: `true`)
+* `case_insensitive` (Boolean / default: `true`)
  * if set to `false`, comparison is case sencitive
+ * also key `case_insencitive` will be accepted due to historical typo
 * `message` (Symbol / default: `:invalid`)
  * specify custom key of error message
 
@@ -59,7 +60,7 @@ class User < ActiveRecord::Base
   validates(:name,
             username_not_reserved: {
               additional_reserved_names: %w[foo bar],
-              case_insencitve: true,
+              case_insensitive: true,
               message: :reserved_username
             }
            )
