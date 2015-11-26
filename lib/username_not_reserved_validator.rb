@@ -27,7 +27,7 @@ class UsernameNotReservedValidator < ActiveModel::EachValidator
     end
 
     if words.include?(username)
-      record.errors[attribute] << (options[:message] || :invalid)
+      record.errors.add(attribute, (options[:message] || :invalid))
     end
   end
 end
