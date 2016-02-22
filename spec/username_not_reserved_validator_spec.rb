@@ -161,8 +161,4 @@ describe UsernameNotReservedValidator do
       end
     end
   end
-
-  describe '.default_options' do
-    it { expect(described_class.default_options).to eq( { case_insensitive: true } ) }
-  end
 end
