@@ -1,9 +1,10 @@
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+require 'username_not_reserved_validator/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'username_not_reserved_validator'
-  spec.version       = '1.0.5'
+  spec.version       = UsernameNotReservedValidator::VERSION
   spec.authors       = ['SHIOYA, Hiromu']
   spec.email         = ['kwappa.856@gmail.com']
   spec.summary       = 'validates that username is not included in reserved list.'
@@ -20,5 +21,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'bundler'
   spec.add_development_dependency 'rake'
   spec.add_development_dependency 'rspec'
+  spec.add_development_dependency 'pry-byebug'
   spec.add_development_dependency 'coveralls'
 end

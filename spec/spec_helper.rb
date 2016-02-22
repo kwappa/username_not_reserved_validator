@@ -1,6 +1,7 @@
 require 'rubygems'
 require 'rspec'
 require 'active_model'
+require 'pry-byebug'
 
 require 'coveralls'
 Coveralls.wear!
